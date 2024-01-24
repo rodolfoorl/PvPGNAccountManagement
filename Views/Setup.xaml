@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="PvPGNAccountManagement.Views.Setup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource Title}" Text="Setup"></TextBlock>
+            <StackPanel Grid.Row="1">
+                <TextBlock Style="{StaticResource Label}">Charinfo Path</TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="55"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="{Binding PathCharInfo, Mode=TwoWay}"></TextBox>
+                    <Button Grid.Column="1" Content="Search" Command="{Binding SearchPathCharInfoCommand}"></Button>
+                </Grid>
+                <TextBlock Style="{StaticResource Exemple}">Exemple: C:\PvPGN\var\charinfo</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <TextBlock Style="{StaticResource Label}">Users Path</TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="55"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="{Binding PathUsers, Mode=TwoWay}"></TextBox>
+                    <Button Grid.Column="1" Content="Search" Command="{Binding SearchPathUsersCommand}"></Button>
+                </Grid>
+                <TextBlock Style="{StaticResource Exemple}">Exemple: C:\PvPGN\var\users</TextBlock>
+            </StackPanel>
+            <Button Grid.Row="4" Content="Save" Command="{Binding SaveCommand}"></Button>
+        </Grid>
+    </Grid>
+</UserControl>

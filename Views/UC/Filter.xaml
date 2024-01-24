@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="PvPGNAccountManagement.Views.UC.Filter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Grid Margin="0,5">
+        <StackPanel Style="{StaticResource Filter}">
+            <TextBlock Text="Full-text search"></TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="{Binding Search}"></TextBox>
+                <Button Grid.Column="1" Height="20" VerticalAlignment="Bottom" Content="Search" Command="{Binding SearchCommand}" CommandParameter="{Binding Search}"></Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
